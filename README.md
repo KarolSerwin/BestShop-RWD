@@ -1,2 +1,2 @@
-# BestShop-
+# BestShop-RWD
 One-Page Website sample 
