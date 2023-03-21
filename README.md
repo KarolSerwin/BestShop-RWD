@@ -1,2 +1,2 @@
 # BestShop-
-one-page training course
+One-Page Website sample 
