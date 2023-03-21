@@ -1,0 +1,39 @@
+@import "header & section 1 Main";
+@import "section 2 Stats";
+@import "section 3 benefits";
+@import "section 4 Pricing";
+@import "calculator";
+@import "section 5 Contacts";
+@import "footer";
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+:root {
+  /*FONTS*/
+  --font-titles: 'Raleway', sans-serif;
+  --font-text: 'Open Sans', sans-serif;
+
+  /*SIZES*/
+  --size-nav-list: 12px;
+  --size-titles-h2: 36px;
+  --size-paragraphs: 16px;
+  --size-pricing-title: 21px;
+  --size-pricing-big: 46px;
+  --size-pricing-list: 14px;
+  --size-card-title: 20px;
+
+  /*COLORS*/
+  --color-blue: #08A6E4;
+  --color-black: #000000;
+  --color-grey: #A5A5A5;
+  --color-pink: #FB3B64;
+  --color-green: #55DFB4;
+  --color-shadow: #07ACE629;
+}
+

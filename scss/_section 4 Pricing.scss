@@ -1,0 +1,243 @@
+@mixin for-tablets {
+  @media (max-width: 940px) {@content;}
+}
+@mixin mobile {
+  @media (max-width: 685px) {@content}
+}
+
+/*GENERAL STYLES*/
+.section__4 {
+  background-color: #ffffff;
+}
+
+.section__4__container {
+  max-width: 1265px;
+  margin: 0 auto 50px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+/*MAIN TITLE*/
+
+.section__4__title {
+  font-family: var(--font-titles);
+  font-size: var(--size-titles-h2);
+  color: var(--color-black);
+  padding: 100px 0 50px 0;
+  text-align: center;
+
+  @include for-tablets {
+    padding: 50px 0 30px 0;
+  }
+}
+
+
+.pricing__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pricing__block.small {
+  width: 28%;
+
+  @include mobile {
+    width: 70%;
+    margin: 40px;
+  }
+}
+.pricing__block.central {
+  width: 32%;
+
+  @include mobile {
+    width: 70%;
+  }
+}
+
+
+
+/*BLOCKS BORDERS*/
+
+.pricing__block.small.left {
+  border: 1px solid var(--color-pink);
+  border-radius: 18px;
+
+  @include mobile {
+    border: 2px solid var(--color-pink);
+  }
+}
+.pricing__block.central {
+  border: 1px solid var(--color-blue);
+  border-radius: 18px;
+  box-shadow: 5px 10px 27px #07ACE629;
+
+  @include mobile {
+    border: 2px solid var(--color-blue);
+  }
+}
+.pricing__block.small.right{
+  border: 1px solid var(--color-green);
+  border-radius: 18px;
+
+  @include mobile {
+    border: 2px solid var(--color-green);
+  }
+}
+
+/*BLOCKS INSIDE*/
+
+.pricing__block__title {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  color: #13253B;
+  font-size: var(--size-pricing-title);
+
+  @include mobile {
+    padding-top: 30px;
+  }
+
+}
+
+.pricing__block__number {
+  font-family: var(--font-text);
+  font-weight: 300;
+  font-size: var(--size-pricing-big)
+}
+.left .pricing__block__number {
+  color: var(--color-pink);
+}
+.central .pricing__block__number {
+  color: var(--color-blue);
+}
+.right .pricing__block__number {
+  color: var(--color-green);
+}
+
+.section__4__container p {
+  font-family: var(--font-text);
+  font-size: var(--size-pricing-list);
+  color: var(--color-black);
+}
+.section__4__container i.fa-regular {
+  font-size: 11px;
+}
+.section__4__container i.fa-square-check {
+  color: var(--color-green);
+}
+.section__4__container i.fa-rectangle-xmark {
+  color: var(--color-pink);
+}
+.pricing__block span {
+  color: #13253B;
+  font-family: var(--font-titles);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/*BUTTONS */
+
+.pricing__block a {
+  color: #ffffff;
+  padding: 16px 57px;
+  text-decoration: none;
+  font-family: var(--font-text);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 23px;
+}
+.left .pricing__button {
+  background-color: var(--color-pink);
+}
+.central .pricing__button {
+  background-color: var(--color-blue);
+  padding: 16px 64px;
+}
+.right .pricing__button {
+  background-color: var(--color-green);
+}
+
+/*PRICING BLOCK LEFT AND RIGHT*/
+
+.pricing__block {
+  position: relative;
+
+  .pricing__block__title {
+    padding: 34px 0 20px 0;
+
+    @include mobile {
+      padding: 25px 0 20px 0;
+    }
+  }
+
+  .pricing__block__number {
+    padding-bottom: 12px;
+  }
+
+  span {
+    padding-bottom: 50px;
+
+    @include mobile {
+      padding-bottom: 15px;
+    }
+  }
+
+  p {
+    padding-bottom: 23px;
+  }
+  p:last-of-type {
+    padding-bottom: 55px;
+
+
+  }
+  a {
+    position: absolute;
+    top: 436px;
+
+    @include mobile {
+      top: 391px;
+    }
+  }
+}
+
+/*PRICING BLOCK CENTER*/
+
+.pricing__block.central {
+
+  position: relative;
+
+  .pricing__block__title {
+    padding: 34px 0 14px 0;
+  }
+  .pricing__block__number {
+    padding-bottom: 20px;
+  }
+  span {
+    padding-bottom: 64px;
+
+    @include mobile {
+      padding-bottom: 20px;
+    }
+  }
+  p {
+    padding-bottom: 28px;
+  }
+  p:last-of-type {
+    padding-bottom: 53px;
+    position: relative;
+  }
+  a {
+    position: absolute;
+    top: 466px;
+
+    @include mobile {
+      top: 422px;
+    }
+  }
+}

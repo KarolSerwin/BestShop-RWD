@@ -1,0 +1,122 @@
+@mixin for-tablets {
+  @media (max-width: 940px) {@content;}
+}
+@mixin mobile {
+  @media (max-width: 685px) {@content}
+}
+
+.section__2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-family: var(--font-titles);
+    font-size: var(--size-titles-h2);
+    color: var(--color-black);
+    padding: 25px 0 100px 0;
+
+    @include for-tablets {
+      width: 50%;
+      text-align: center;
+      padding: 25px 0;
+    }
+
+    @include mobile {
+      width: 80%;
+    }
+  }
+
+  .cards__wrapper {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    @include for-tablets {
+      width: 60%;
+    }
+    @include mobile {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include for-tablets {
+        .card__text {
+          padding-bottom: 50px;
+          }
+       }
+      @include mobile {
+        zoom: 150%;
+        padding-bottom: 20px;
+        padding-top: 15px;
+
+        .card__title {
+          padding-bottom: 0;
+        }
+
+        .card__text {
+          padding-bottom: 0;
+        }
+      }
+
+    }
+
+    .circle {
+      height: 63px;
+      width: 63px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+    }
+    .circle.left {
+      background-color: var(--color-pink);
+    }
+    .circle.center {
+      background-color: var(--color-blue);
+    }
+    .circle.right {
+      background-color: var(--color-green);
+    }
+    .circle.left::after {
+      content: url("../Assets/Person.svg");
+      display: inline-block;
+      padding-left: 30px;
+    }
+    .circle.center::after {
+      content: url("../Assets/Eye.svg");
+      display: inline-block;
+      padding-left: 20px;
+    }
+    .circle.right::after {
+      content: url("../Assets/Catalog.svg");
+      display: inline-block;
+      padding-left: 30px;
+    }
+    .card__title {
+      font-family: var(--font-titles);
+      font-weight: 800;
+      color: var(--color-black);
+      font-size: var(--size-card-title);
+      padding: 13px 0 19px 0;
+    }
+
+    .card__text {
+      max-width: 110px;
+      text-align: center;
+      font-family: var(--font-text);
+      color: var(--color-grey);
+      font-size: 16px;
+      padding-bottom: 120px;
+    }
+  }
+}
+
+
+
+

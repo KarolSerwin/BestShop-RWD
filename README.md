@@ -1,1 +1,2 @@
-# BestShop-RWD
+# BestShop-
+one-page training course

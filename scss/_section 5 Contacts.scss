@@ -1,0 +1,184 @@
+@mixin for-tablets {
+    @media (max-width: 940px) {@content;}
+}
+@mixin mobile {
+    @media (max-width: 685px) {@content}
+}
+
+/*GENERAL STYLES*/
+
+.section__5__contact {
+    background-color: #ffffff;
+}
+
+.section__5__container {
+    max-width: 896px;
+    margin: 150px auto 80px auto;
+    display: flex;
+    justify-content: space-between;
+
+    @include for-tablets {
+        margin: 120px auto;
+    }
+    @include mobile {
+       flex-direction: column;
+        align-items: center;
+        margin: 80px auto;
+
+        .data__wrap {
+            width: 100%;
+            text-align: center;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .form {
+            width: 80%;
+
+            button {
+                align-self: center;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+.data__wrap {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include for-tablets {
+        padding-left: 30px;
+    }
+    @include mobile {
+        padding: 0;
+    }
+
+
+    h2 {
+        font-family: var(--font-titles);
+        color: var(--color-black);
+        font-size: 49px;
+        padding-bottom: 22px;
+
+        @include for-tablets {
+            font-size: 44px;
+        }
+    }
+    p, a {
+        font-family: var(--font-text);
+    }
+    p {
+        font-size: var(--size-paragraphs);
+        color: var(--color-black);
+        padding-bottom: 42px;
+    }
+    a {
+        color: var(--color-grey);
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .tel-mail__wrap {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+
+        i {
+            color: var(--color-blue);
+        }
+    }
+}
+
+/*FORM STYLES */
+
+.form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include for-tablets {
+        width: 50%;
+        padding-right: 30px;
+    }
+    @include mobile {
+        padding: 0;
+    }
+
+    label {
+        font-family: var(--font-text);
+        font-size: var(--size-nav-list);
+        color: var(--color-blue);
+        font-weight: 700;
+    }
+
+    p {
+        max-width: 405px;
+        color: #707070;
+        font-size: 11px;
+        font-weight: 400;
+        padding: 0 0 20px 0;
+        margin-left: 10px;
+
+        @include for-tablets {
+            font-size: 9px;
+        }
+    }
+    input[type="text"], input[type="email"] {
+        width: 100%;
+        margin-bottom: 30px;
+        outline: none;
+        border: 0;
+        border-bottom: 2px solid var(--color-grey);
+    }
+    .form__button {
+        font-family: var(--font-text);
+        font-size: 13px;
+        font-weight: 700;
+        color: #ffffff;
+        background-color: var(--color-blue);
+        outline: none;
+        border: 0;
+        padding: 20px 97px;
+        border-radius: 35px;
+        box-shadow: 5px 10px 14px #07ACE629;
+        align-self: flex-end;
+    }
+}
+
+
+/*
+CHECKBOX*/
+
+.checkbox {
+    cursor: pointer;
+    display: flex;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    span {
+        height: 22px;
+        flex-shrink: 0;
+        flex-basis: 22px;
+        border: 1px solid #D1D1D1;
+        cursor: pointer;
+        margin-right: 15px;
+        border-radius: 8px;
+    }
+    input:checked + span {
+        background-image: url("../Assets/Checkmark.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
